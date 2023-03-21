@@ -11,6 +11,8 @@ function findFactors() {
     }
   }
 
+  factors.sort(function(a, b) { return a - b; });
+
   var factorList = document.getElementById("factors");
   factorList.innerHTML = factors.join(", "); 
 }
