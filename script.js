@@ -1,14 +1,16 @@
 function findFactors() {
-    var number = document.getElementById("number").value;
-    var factors = [];
-  
-    for (var i = 1; i <= number; i++) {
-      if (number % i === 0) {
-        factors.push(i);
+  var number = BigInt(document.getElementById("number").value);
+  var factors = [];
+
+  for (var i = BigInt(1); i * i <= number; i++) {
+    if (number % i === 0n) {
+      factors.push(i);
+      if (i * i !== number) {
+        factors.push(number / i);
       }
     }
-  
-    var factorList = document.getElementById("factors");
-    factorList.innerHTML = factors.join(", "); // Join the factors array with comma and space
   }
-  
+
+  var factorList = document.getElementById("factors");
+  factorList.innerHTML = factors.join(", "); 
+}
