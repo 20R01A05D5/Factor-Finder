@@ -21,4 +21,4 @@ function findFactors() {
     
     var countContainer = document.getElementById("count");
     countContainer.innerHTML = "Number of factors: " + count;
-  }
+}
